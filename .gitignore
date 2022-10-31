@@ -6,3 +6,7 @@ node_modules
 .output
 .env
 dist
+
+# SSL certificate
+localhost.pem
+localhost-key.pem
