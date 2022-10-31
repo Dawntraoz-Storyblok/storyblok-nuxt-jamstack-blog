@@ -10,5 +10,10 @@ module.exports = {
       center: true,
       padding: '1rem'
     },
+    extend: {
+      backgroundImage: {
+        'main': "linear-gradient(to bottom, #EDEAE4 0, #EDEAE4 400px, #F4F2ED 400px, #F4F2ED 100%)"
+      }
+    }
   }
 }
