@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.1.2",
+    "@tailwindcss/typography": "^0.5.7",
     "nuxt": "3.0.0-rc.12"
   },
   "dependencies": {

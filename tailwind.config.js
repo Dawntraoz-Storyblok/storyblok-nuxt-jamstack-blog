@@ -15,5 +15,8 @@ module.exports = {
         'main': "linear-gradient(to bottom, #EDEAE4 0, #EDEAE4 400px, #F4F2ED 400px, #F4F2ED 100%)"
       }
     }
-  }
+  },
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
