@@ -4,7 +4,7 @@ export default defineNuxtConfig({
     [
       '@storyblok/nuxt',
       {
-				accessToken: 'Vk7gZ5zGwddWRQbvQilSZAtt',
+				accessToken: process.env.SB_API_TOKEN,
 				apiOptions: { region: 'us' }
 			}
     ],
@@ -15,5 +15,10 @@ export default defineNuxtConfig({
     strategy: 'prefix_except_default',
     locales: ['en', 'es'],
     defaultLocale: 'en', // default locale
+  },
+  nitro: {
+    prerender: {
+      routes: ['/es']
+    }
   }
 })
