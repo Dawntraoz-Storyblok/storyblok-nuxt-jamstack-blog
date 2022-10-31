@@ -18,11 +18,13 @@
 <script setup>
 defineProps({ blok: Object })
 
+const { locale } = useI18n()
 const storyblokApi = useStoryblokApi()
 
 // Requesting multiple stories (List of Articles)
 const { data } = await storyblokApi.get('cdn/stories', {
   version: 'draft',
+  language: locale.value,
   starts_with: 'blog', // Getting the blog folder stories
   is_startpage: 0, // Filter the overview (Blog Home) page
 })

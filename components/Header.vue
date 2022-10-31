@@ -1,15 +1,18 @@
 <template>
   <header>
     <div class="container h-full mx-auto py-6 flex items-center justify-between">
-      <NuxtLink to="/" class="text-xl text-stone-900 font-semibold hover:text-pink-400">
+      <NuxtLink :to="localePath('/')" class="text-xl text-stone-900 font-semibold hover:text-pink-400">
         Jamstack blog
       </NuxtLink>
       <nav v-if="headerMenu">
         <ul class="flex gap-6 md:gap-10 text-sm text-stone-700 font-semibold">
           <li v-for="menuLink in headerMenu" :key="menuLink._uid">
-            <NuxtLink :to="`/${menuLink.link.cached_url}`" class="capitalize hover:text-pink-400">
+            <NuxtLink :to="localePath(`/${menuLink.link.cached_url}`)" class="capitalize hover:text-pink-400">
               {{ menuLink.link.story.name }}
             </NuxtLink>
+          </li>
+          <li v-for="lang in availableLocales" :key="lang">
+            <a href="#" @click.prevent.stop="setLocale(lang)" class="uppercase" :class="lang === locale && 'router-link-active'">{{ lang }}</a>
           </li>
         </ul>
       </nav>
@@ -18,6 +21,13 @@
 </template>
 
 <script setup>
+const localePath = useLocalePath()
+const { locale, locales, setLocale } = useI18n()
+
+const availableLocales = computed(() => {
+  return (locales.value).filter(i => i.code !== locale.value)
+});
+
 const storyblokApi = useStoryblokApi()
 const { data } = await storyblokApi.get('cdn/stories/config', {
   version: 'draft',
