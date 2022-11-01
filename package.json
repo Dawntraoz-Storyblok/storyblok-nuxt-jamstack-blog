@@ -4,7 +4,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
+    "preview": "npx serve .output/public",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {

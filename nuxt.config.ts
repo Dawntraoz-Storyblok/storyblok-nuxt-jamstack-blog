@@ -16,9 +16,7 @@ export default defineNuxtConfig({
     locales: ['en', 'es'],
     defaultLocale: 'en', // default locale
   },
-  nitro: {
-    prerender: {
-      routes: ['/es']
-    }
+  generate: {
+    routes: ['/es']
   }
 })

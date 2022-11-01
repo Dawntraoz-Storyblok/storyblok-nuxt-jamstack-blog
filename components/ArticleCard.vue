@@ -12,7 +12,7 @@
     <p class="text-sm text-stone-600 pt-1">
       {{ article.teaser }}
     </p>
-    <NuxtLink :to="localePath(`/${slug}`)" class="block text-right text-pink-400 text-sm underline pt-2">Read more</NuxtLink>
+    <NuxtLink :to="localePath(`/${slug}${slug.slice(-1) !== '/' ? '/' : ''}`)" class="block text-right text-pink-400 text-sm underline pt-2">Read more</NuxtLink>
   </article>
 </template>
 
