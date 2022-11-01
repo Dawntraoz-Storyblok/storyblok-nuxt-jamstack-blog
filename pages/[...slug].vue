@@ -18,7 +18,7 @@ const { data } = await useAsyncData(
     }
   )
 );
-const story = ref(data.value.data.story);
+const story = useState(`${locale.value}-${url}-story`, () => data.value.data.story);
 
 onMounted(() => {
   if (story.value && story.value.id) {
