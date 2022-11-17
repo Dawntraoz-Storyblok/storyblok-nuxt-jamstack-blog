@@ -8,12 +8,12 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.1.2",
+    "@nuxtjs/tailwindcss": "^6.1.3",
     "@tailwindcss/typography": "^0.5.7",
-    "nuxt": "3.0.0-rc.12"
+    "nuxt": "^3.0.0"
   },
   "dependencies": {
-    "@storyblok/nuxt": "^4.4.2",
+    "@storyblok/nuxt": "^4.5.0",
     "axios": "^0.27.2"
   }
 }
